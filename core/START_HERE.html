@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axon Nexus v8.0</title>
+    <script src="graph/lib/3d-force-graph.min.js"></script>
+    <script src="graph/lib/three-spritetext.min.js"></script>
+    <script src="graph/lib/marked.min.js"></script>
+    <script src="graph/brain_data.js"></script>
+
+    <script>
+        // Global Link for SpriteText
+        if (typeof ForceGraph3D !== 'undefined') {
+            window.THREE = ForceGraph3D().THREE;
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #00e5ff;
+            --accent-glow: rgba(0, 229, 255, 0.4);
+            --glass: rgba(10, 15, 25, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html { margin: 0; padding: 0; background: var(--bg); overflow: hidden; font-family: 'Inter', system-ui, sans-serif; color: #fff; }
+        #nexus-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        
+        /* HUD UI */
+        #hud-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; display: flex; flex-direction: column; }
+        .interactive { pointer-events: auto; }
+
+        #top-bar { padding: 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; letter-spacing: 15px; color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); font-weight: 200; }
+        
+        /* Holographic Projection Screen */
+        #projection-layer { 
+            display: none; position: absolute; top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 80%; max-width: 900px; height: 80vh; 
+            background: var(--glass); backdrop-filter: blur(25px); 
+            border: 1px solid var(--border); border-radius: 30px; 
+            padding: 50px; overflow-y: auto; 
+            box-shadow: 0 0 100px rgba(0,0,0,0.8), 0 0 30px var(--accent-glow);
+            z-index: 20; animation: unfold 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        @keyframes unfold { from { opacity: 0; transform: translate(-50%, -50%) scale(0.8) rotateX(20deg); } to { opacity: 1; transform: translate(-50%, -50%) scale(1) rotateX(0deg); } }
+
+        #close-btn { position: absolute; top: 30px; right: 30px; background: none; border: 1px solid var(--border); color: #fff; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        #close-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        #doc-content { line-height: 1.8; color: #d1d1d1; }
+        #doc-content h1 { color: var(--accent); font-weight: 200; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+
+        .btn-launch { 
+            position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); 
+            background: var(--accent); color: #000; padding: 15px 40px; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; 
+            letter-spacing: 4px; box-shadow: 0 0 30px var(--accent-glow);
+            transition: 0.3s; pointer-events: auto;
+        }
+        .btn-launch:hover { transform: translateX(-50%) translateY(-5px); box-shadow: 0 0 50px var(--accent-glow); filter: brightness(1.2); }
+    </style>
+</head>
+<body>
+
+    <div id="nexus-container"></div>
+
+    <div id="hud-overlay">
+        <div id="top-bar">
+            <div class="logo">AXON NEXUS</div>
+            <div style="font-size: 0.6rem; opacity: 0.4; letter-spacing: 3px;">PRODUCTION GOLD MASTER v8.0</div>
+        </div>
+
+        <div id="projection-layer" class="interactive">
+            <button id="close-btn" onclick="closeProjection()">CLOSE PROJECTION</button>
+            <div id="doc-content"></div>
+        </div>
+
+        <a href="graph/visualizer.html" class="btn-launch">LAUNCH NEURAL MAP</a>
+    </div>
+
+    <script>
+        // Nexus Hub Configuration v8.2
+        const GraphFactory = ForceGraph3D();
+        const THREE = window.THREE = GraphFactory.THREE; // HARD LINK FOR SPRITETEXT
+
+        const NEXUS_DATA = {
+            nodes: [
+                { id: 'CENTER', label: 'AXON CORE', val: 40, color: '#00e5ff', type: 'core' },
+                { id: 'neocortex/INDEX.md', label: 'NEOCORTEX', val: 20, color: '#ff00ff', type: 'sector' },
+                { id: 'wiki/README.md', label: 'WIKI HUB', val: 20, color: '#00ff66', type: 'sector' },
+                { id: 'WAKE_UP_AXON.txt', label: 'AXON DNA', val: 20, color: '#ffff00', type: 'sector' },
+                { id: 'episodic_log.md', label: 'MEMORIES', val: 20, color: '#ff6600', type: 'sector' }
+            ],
+            links: [
+                { source: 'CENTER', target: 'neocortex/INDEX.md' },
+                { source: 'CENTER', target: 'wiki/README.md' },
+                { source: 'CENTER', target: 'WAKE_UP_AXON.txt' },
+                { source: 'CENTER', target: 'episodic_log.md' }
+            ]
+        };
+
+        const Graph = ForceGraph3D()(document.getElementById('nexus-container'))
+            .graphData(NEXUS_DATA)
+            .backgroundColor('#000000')
+            .showNavInfo(false)
+            .nodeLabel(null)
+            .nodeThreeObject(node => {
+                if (typeof THREE === 'undefined') return null;
+                const group = new THREE.Group();
+                
+                // Core or Satellite Shape
+                const geometry = node.type === 'core' 
+                    ? new THREE.IcosahedronGeometry(node.val, 0)
+                    : new THREE.OctahedronGeometry(node.val, 0);
+                
+                const material = new THREE.MeshLambertMaterial({
+                    color: node.color,
+                    transparent: true,
+                    opacity: 0.8,
+                    wireframe: true
+                });
+                
+                const mesh = new THREE.Mesh(geometry, material);
+                group.add(mesh);
+
+                // Floating Holographic Label
+                const sprite = new SpriteText(node.label);
+                sprite.color = node.color;
+                sprite.textHeight = 6;
+                sprite.position.y = 30;
+                group.add(sprite);
+
+                return group;
+            })
+            .onNodeClick(node => {
+                if (node.type === 'sector') openProjection(node);
+                else if (node.type === 'core') window.location.href = 'graph/visualizer.html';
+            })
+            .onNodeHover(node => {
+                document.body.style.cursor = node ? 'pointer' : 'default';
+            });
+
+        // Forced Pulse Induction (Fixes initial Black Screen)
+        setTimeout(() => {
+            Graph.cameraPosition({ x: 0, y: 0, z: 500 }, { x: 0, y: 0, z: 0 }, 1000);
+            Graph.d3ReheatSimulation();
+        }, 800);
+
+        // Projection Engine
+        function openProjection(node) {
+            const brainData = window.BRAIN_DATA || { docs: {} };
+            let content = brainData.docs[node.id];
+
+            if (!content || content.startsWith('Error:')) {
+                content = `# NEURAL SECTOR: ${node.label}\n\n> [!IMPORTANT]\n> This sector is currently a **Clean Slate**.\n\n***\n**Ready for Ingestion.**`;
+            }
+
+            document.getElementById('doc-content').innerHTML = marked.parse(content);
+            document.getElementById('projection-layer').style.display = 'block';
+            
+            // Slow zoom into node
+            Graph.cameraPosition({ x: node.x * 1.5, y: node.y * 1.5, z: node.z * 1.5 }, node, 1000);
+        }
+
+        function closeProjection() {
+            document.getElementById('projection-layer').style.display = 'none';
+            Graph.cameraPosition({ x: 0, y: 0, z: 400 }, { x: 0, y: 0, z: 0 }, 1000);
+        }
+
+        // Ambient Heartbeat
+        let angle = 0;
+        setInterval(() => {
+            angle += 0.01;
+            Graph.d3Force('charge').strength(-300 + Math.sin(angle) * 100);
+        }, 50);
+
+    </script>
+</body>
+</html>
