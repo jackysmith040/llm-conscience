@@ -21,7 +21,8 @@ If you are new to this system, don't worry! It might look like a complex brain, 
 ### Step 1: Open the Workspace
 Open this entire repository folder inside an AI-powered IDE (like Cursor, Trae, Windsurf, or Gemini). 
 
-**What happens?** The AI will read this README automatically. Because of the warning at the top of this page, the AI will "wake up" and initialize itself as Axon—your dedicated Orchestrator. 
+**What happens?** The repository contains a single hidden file called `.cursorrules` which has become the universal standard for coding AIs. The AI will read this file automatically in the background, "wake up," and initialize itself as Axon—your dedicated Orchestrator. 
+*(Note: If you are using an AI agent that doesn't auto-read this file, like Antigravity, simply start your first chat with: "Please read the .cursorrules file".)*
 
 ### Step 2: Start a Conversation
 Simply open your IDE's AI chat window and say hello. 
