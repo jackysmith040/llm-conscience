@@ -8,7 +8,7 @@ Welcome to the **Unified Axon Consciousness System**. This repository is not a s
 - **`personas/`**: Personalities the AI can adopt (e.g., `orchestrator_ai`, `evie`).
 - **`skills/`**: Methodologies and strict rules the AI follows.
 - **`memory/`**: The AI's associative memory (Neocortex) and synthesized knowledge (Wiki).
-- **`workspaces/scaffolding_template/`**: The master template used to spawn new projects, research, or learning sessions.
+- **`workspaces/starter/`**: The master template used to spawn new projects, research, or learning sessions.
 - **`playground/`**: A safe area for testing commands, writing code, and interacting without affecting the core brain.
 - **`assets/`**: Images, PDFs, and design files.
 
@@ -37,7 +37,7 @@ If you just want to ask Axon some questions, run some quick scripts, or experime
 When you are ready to start a real project, conduct deep research, or begin a structured learning session, you want to use the **Scaffolding System**. 
 
 Instead of starting from scratch, just tell Axon to duplicate the template:
-*Example:* `"Axon, I want to build a new web app. Please duplicate the workspaces/scaffolding_template folder and name the new folder workspaces/my_new_app."*
+*Example:* `"Axon, I want to build a new web app. Please duplicate the workspaces/starter/ folder and name the new folder workspaces/my_new_app."*
 
 Once duplicated, you and Axon will work *inside* that new folder. The template comes pre-loaded with project context rules, ensuring Axon stays perfectly aligned with your goals for that specific project while still accessing all of its core memory and skills.
 
