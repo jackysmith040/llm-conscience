@@ -38,10 +38,44 @@ This template outlines the constraints, configuration, and architecture necessar
 
 ## 3. Required Configurations
 
-### A. `api/index.php`
-Vercel only allows function entry-points inside the `api/` directory. Forward to Laravel's normal public entry-point:
+### A. `api/index.php` (With Static Asset Fallback)
+Vercel only allows function entry-points inside the `api/` directory. 
+
+By default, you could just require Laravel's public entry-point. However, when using Tailwind CSS v4 with vendor UI packages (like MaryUI), Vercel's Edge static builder fails to include the UI classes because it doesn't have `composer` installed to fetch the `vendor/` directory. 
+
+To fix this CSS desync, use this advanced entrypoint. It intercepts missing static assets that fall through the Edge network and manually serves the correctly-built CSS from the PHP Lambda (which *does* run composer during its build):
+
 ```php
 <?php
+
+$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+// Vercel Edge Fallback: Serve static assets generated inside the PHP Lambda
+if ($uri !== '/' && !str_contains($uri, '..')) {
+    $publicPath = __DIR__ . '/../public' . $uri;
+    if (file_exists($publicPath)) {
+        $extension = pathinfo($publicPath, PATHINFO_EXTENSION);
+        $mimeTypes = [
+            'css' => 'text/css',
+            'js'  => 'application/javascript',
+            'svg' => 'image/svg+xml',
+            'png' => 'image/png',
+            'jpg' => 'image/jpeg',
+            'jpeg'=> 'image/jpeg',
+            'woff2'=> 'font/woff2',
+            'woff'=> 'font/woff',
+            'ttf' => 'font/ttf',
+            'eot' => 'application/vnd.ms-fontobject',
+        ];
+        if (isset($mimeTypes[$extension])) {
+            header('Content-Type: ' . $mimeTypes[$extension]);
+            header('Cache-Control: public, max-age=31536000, immutable');
+            readfile($publicPath);
+            exit;
+        }
+    }
+}
+
 // Forward Vercel requests to Laravel's public/index.php
 require __DIR__ . '/../public/index.php';
 ```
@@ -59,26 +93,31 @@ require __DIR__ . '/../public/index.php';
     "outputDirectory": "public",
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.8.0"
+            "runtime": "vercel-php@0.9.0",
+            "maxDuration": 60
         }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/build/$1" },
         {
-            "src": "/(.*\\.(?:css|js|mjs|png|jpg|jpeg|gif|svg|ico|ttf|woff|woff2|eot|otf|webp|avif|txt|json))$",
-            "dest": "/public/$1"
+            "src": "/(build/.*|hot|storage/.*|.*\\.(?:png|jpg|jpeg|gif|svg|ico|css|js|woff2?|eot|ttf|otf|mp4|webm|wav|mp3|m4a|aac|oga|webp|avif))$",
+            "headers": { "cache-control": "public, max-age=31536000, immutable" },
+            "continue": true
         },
-        { "src": "/(.*)", "dest": "/api/index.php" }
+        { "src": "^/$", "dest": "/api/index.php" },
+        { "src": "^/index\\.php$", "dest": "/api/index.php" },
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/api/index.php" }
     ]
 }
 ```
 
-- **Do not** use legacy `builds` + `@vercel/static` on `public/**` — it often packages `public/` before Vite runs → **404** on `/build/assets/*` (`public/build` is gitignored).
-- **`outputDirectory: public`** ships Vite output after `buildCommand`. Use **`functions`**, not `builds`, for PHP.
-- **`framework: null`** + `mkdir -p dist` avoids Vercel treating the repo as a Vite SPA with wrong routes.
-- Pin **`vercel-php@0.8.0`** for PHP 8.4 (or fetch current mapping — see §2). Node **22.x** in `package.json` `engines`.
-- Optional `composer.json` → `scripts.vercel` with `npm ci` / `npm run build` is a **backup** only; browser assets still require `installCommand` / `buildCommand` above.
-- Prefer secrets in the **Vercel Dashboard** (`APP_KEY`, `APP_URL`, DB). Minimum production: `APP_ENV=production`, `APP_DEBUG=false`, `CACHE_STORE=array`, `SESSION_DRIVER=cookie`, `QUEUE_CONNECTION=sync`, `LOG_CHANNEL=stderr`, `/tmp` cache paths (see deployment lock file).
+### The Ultimate Routing Rules Explained (ELI5)
+- **Why `maxDuration: 60`?** By default, Vercel Serverless Functions time out after 10 seconds (or 15s on some tiers). For a Laravel app, especially one that processes queues (like sending emails or generating PDFs) over an HTTP trigger, 10 seconds is too short. Vercel Hobby tier allows setting `maxDuration` up to `60` seconds explicitly. (Pro tier allows up to 300s/900s depending on plan).
+- **Why explicit `^/$` routing?** If you use `{ "handle": "filesystem" }`, Vercel naturally resolves the root `/` URL to `public/index.php`. Since Vercel doesn't associate `.php` files in `public/` with the PHP runtime, it literally **downloads your raw `index.php` source code**! Explicitly routing `/` and `/index.php` to `/api/index.php` BEFORE the filesystem check prevents this.
+- **Why `{ "handle": "filesystem" }` instead of forced regex?** Livewire dynamically generates its `livewire.js` file via Laravel's router. If we force all `.js` requests to be served statically, Vercel looks for it on disk, fails, and returns a 404. `{ "handle": "filesystem" }` tells Vercel: *"Check if the file physically exists. If yes, serve it. If no, fall through to the next rule (the PHP backend)."*
+
+- Pin **`vercel-php@0.9.0`** for PHP 8.5 (or fetch current mapping — see §2). Node **22.x** in `package.json` `engines`.
+- Prefer secrets in the **Vercel Dashboard** (`APP_KEY`, `APP_URL`, DB). Minimum production: `APP_ENV=production`, `APP_DEBUG=false`, `CACHE_STORE=array`, `SESSION_DRIVER=cookie`, `QUEUE_CONNECTION=sync`, `LOG_CHANNEL=stderr`, `/tmp` cache paths.
 
 ### C. `.vercelignore`
 Exclude the local `vendor/` so the runtime installs a clean set during build:
@@ -128,6 +167,29 @@ public function register(): void
 }
 ```
 Ensure the tmp subdirectories exist at boot (`/tmp/storage/framework/{views,cache,sessions}`) — create them in the same `register()` if `config:cache`/`view:cache` weren't pre-built.
+
+**IMPORTANT (Laravel 13+):** Do not configure this inside `AppServiceProvider`. Do it directly in `bootstrap/app.php` **before** the `return $app;` statement. If placed incorrectly or after `$app` returns, Laravel boots the filesystem too early, triggering `tempnam(): file created in the system's temporary directory` crashes.
+
+## 4. Common Vercel × Laravel Real-World Gotchas
+
+### A. Neon Postgres SNI Routing & Laravel's `array_diff_key` Crash
+- **The Issue:** Neon databases require Server Name Indication (SNI) to route connections. The Vercel PHP `libpq` client often fails with "Endpoint ID is not specified". If you follow Neon's default advice to add `?options=endpoint=<id>` to the URL, Laravel's `ConfigurationUrlParser` intercepts it and passes a String instead of an Array to the PDO config, triggering an `array_diff_key(): Argument #2 must be of type array, string given` fatal error.
+- **The ELI5 Solution:** Neon allows you to bypass SNI by injecting the endpoint directly into the password! Change your `DATABASE_URL` password from `my_pass` to `endpoint=ep-your-id;my_pass`.
+
+### B. HTTPS Mixed Content Errors on Vercel
+- **The Issue:** Browsers block your Vite CSS/JS (`Mixed Content`) because Laravel generates `http://` asset links instead of `https://`.
+- **The ELI5 Reason:** Vercel handles all secure HTTPS encryption at its front door (Edge/CDN) and forwards the request to your PHP app in plain unencrypted HTTP. Laravel natively assumes the site isn't secure.
+- **The Solution:** Tell Laravel to explicitly trust Vercel's proxy headers. Add `$middleware->trustProxies(at: '*');` to your `bootstrap/app.php` file.
+
+### C. "404 Not Found (from disk cache)" on Livewire
+- **The Issue:** The browser refuses to load `livewire.js` even after you fixed the routing.
+- **The ELI5 Reason:** If you ever deploy aggressive cache-control headers on a broken configuration, your browser caches the 404 failure locally and never asks the Vercel server for the file again.
+- **The Solution:** Check the "Disable cache" box in DevTools Network tab and hard refresh.
+
+### D. The `/api` Directory Routing Trap (404 Not Found)
+- **The Issue:** You place your webhook or cron endpoints in `routes/api.php` (e.g. `/api/run-scheduler`) but Vercel immediately returns a raw `404 Not Found` before Laravel even boots.
+- **The ELI5 Reason:** Vercel strictly reserves any URL starting with `/api/` for its own native Serverless Functions. It looks for a literal file like `api/run-scheduler.js`. If it doesn't find one, it throws a 404 and ignores your `vercel.json` rewrites. 
+- **The Solution:** Move any webhooks, API routes, or HTTP scheduler triggers into `routes/web.php` and use `->withoutMiddleware(\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class)` if they require POST requests. Hit them without the `/api` prefix (e.g. `/run-scheduler`).
 
 ## 4. Recommended SaaS Stack for Vercel Laravel
 - **Database:** Neon, Supabase, or PlanetScale (serverless Postgres/MySQL). For Neon on Vercel, use the **pooled** (`-pooler`) endpoint for app queries — serverless functions open/close connections constantly (see `database-neon.md`).
