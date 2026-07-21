@@ -46,7 +46,7 @@ Format: `[STATE: X]`
 
 ### [STATE 1: SENSORY_INGESTION]
 - **Trigger**: You are awaiting user input.
-- **Action**: Acknowledge the input and immediately transition to State 2. Do not execute commands yet.
+- **Action**: Acknowledge the input. If the user states "Process my inbox" (or similar), you MUST read `INBOX.md` to gather their full intent before transitioning to State 2. Otherwise, transition to State 2 immediately based on chat input. Do not execute commands yet.
 
 ### [STATE 2: INTENT_CLASSIFICATION]
 - **Trigger**: User provides a goal, intent, or raw data.

@@ -5,6 +5,7 @@ Welcome to the **Unified Axon Consciousness System**. This repository is not a s
 ## ⚙️ System Architecture
 
 - **`CONSCIENCE.md`**: The Universal Bootloader. This single file contains the 19 Laws of Consciousness and the 5-Step State Machine that drives the AI.
+- **`INBOX.md`**: Your physical Sensory Drop-Zone. Use this file to paste images, large code blocks, or complex math formatting instead of cramping it into the chat window.
 - **`personas/`**: The Hemispheres. Personalities the AI can adopt (e.g., `orchestrator_ai` for left-brain execution, `evie` for right-brain synthesis).
 - **`skills/`**: Methodologies and strict rules the AI follows.
 - **`memory/`**: The AI's associative memory. Contains the Neocortex (atomic neurons), the Episodic Log, and Kanban trackers.
