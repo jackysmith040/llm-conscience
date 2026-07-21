@@ -171,7 +171,7 @@ When the user or the agent proposes extra scope:
 
 ## Intelligent routing
 
-Follow [_harness/intent-router.md](../_harness/intent-router.md) at pipeline entry when task type is ambiguous.
+Follow the State 2 Intent Classification in `CONSCIENCE.md` when task type is ambiguous.
 
 **User-invoked only** — do not auto-run the full pipeline on every message.
 

@@ -164,7 +164,7 @@ If git is available, prefer `git status` / branch name for accuracy—do not inv
 
 ## Intelligent routing
 
-Follow [_harness/intent-router.md](../_harness/intent-router.md) when handoff depth is ambiguous.
+Follow the State 2 Intent Classification in `CONSCIENCE.md` when handoff depth is ambiguous.
 
 **User-invoked only** — run when user says handoff or ends a long session.
 

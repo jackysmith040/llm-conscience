@@ -37,14 +37,14 @@ Impeccable has 23 commands across six categories. You should not need to memoriz
 |----------|------|
 | This skill (canonical) | `project-plan/templates/context_methodology/i-am-impeccable/SKILL.md` |
 | Command catalog | [commands.md](commands.md) |
-| Shared harness | [_harness/intent-router.md](../_harness/intent-router.md) |
+| Shared harness | CONSCIENCE.md |
 | Upstream Impeccable | `.agents/skills/impeccable/` (after `npx skills add pbakaus/impeccable`) |
 
 ---
 
 ## How — router procedure
 
-Follow [_harness/intent-router.md](../_harness/intent-router.md) exactly. Skill-specific additions:
+Follow CONSCIENCE.md exactly. Skill-specific additions:
 
 ### Preflight
 

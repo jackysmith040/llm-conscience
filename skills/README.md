@@ -11,7 +11,7 @@ Copy this folder into any repo (e.g. `project-plan/templates/context_methodology
 
 **Shared impact:** You describe problems in plain language; each intelligent skill infers intent, shows up to 3 ELI5 choices, and waits for your pick before executing.
 
-**Shared harness:** [_harness/intent-router.md](_harness/intent-router.md) — mirror → signal scan → classify → present + STOP → delegate.
+**Shared harness:** The `CONSCIENCE.md` bootloader.
 
 **Layout:** Laravel-first core in `senior-stable-delivery/`; stack appendix optional per project.
 

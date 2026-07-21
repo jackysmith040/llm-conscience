@@ -134,7 +134,7 @@ Do **not** write production code until the user confirms—or edits the brief in
 
 ## Intelligent routing
 
-Follow [_harness/intent-router.md](../_harness/intent-router.md) when alignment depth is ambiguous.
+Follow the State 2 Intent Classification in `CONSCIENCE.md` when alignment depth is ambiguous.
 
 **User-invoked only** — do not auto-run on every message. (Design UI work may separately trigger **i-am-impeccable** with its own confirm gate.)
 
