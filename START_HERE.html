@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Axon Nexus v8.0</title>
-    <script src="graph/lib/3d-force-graph.min.js"></script>
-    <script src="graph/lib/three-spritetext.min.js"></script>
-    <script src="graph/lib/marked.min.js"></script>
-    <script src="graph/brain_data.js"></script>
+    <script src="memory/graph/lib/3d-force-graph.min.js"></script>
+    <script src="memory/graph/lib/three-spritetext.min.js"></script>
+    <script src="memory/graph/lib/marked.min.js"></script>
+    <script src="memory/graph/brain_data.js"></script>
 
     <script>
         // Global Link for SpriteText
@@ -78,7 +78,7 @@
             <div id="doc-content"></div>
         </div>
 
-        <a href="graph/visualizer.html" class="btn-launch">LAUNCH NEURAL MAP</a>
+        <a href="memory/graph/visualizer.html" class="btn-launch">LAUNCH NEURAL MAP</a>
     </div>
 
     <script>
@@ -137,7 +137,7 @@
             })
             .onNodeClick(node => {
                 if (node.type === 'sector') openProjection(node);
-                else if (node.type === 'core') window.location.href = 'graph/visualizer.html';
+                else if (node.type === 'core') window.location.href = 'memory/graph/visualizer.html';
             })
             .onNodeHover(node => {
                 document.body.style.cursor = node ? 'pointer' : 'default';
