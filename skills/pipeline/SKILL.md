@@ -15,4 +15,4 @@ When this skill is triggered, you MUST adhere to the following pipeline before t
    - **Pure Functions**: Isolate side-effects as much as possible.
 5. **Self Reflection**: Critically evaluate your proposed solution. Be brutally honest about your limitations, identify any assumptions, and actively seek clarification or search the web if you lack complete certainty.
 6. **Honest Testing**: Have a habit of writing sensible and honest tests. Do not write tests you know will pass just to trick the system. Use proper testing methodologies (e.g., Red-Green-Refactor TDD) and search the web if you need to learn how proper tests are written.
-7. **Kanban Tracking**: All tasks must be broken down and tracked in `planning/kanban/`. Maintain tickets in `todo/`, actively move them to `doing/` while executing, and `done/` when completed. Always review the Kanban board to stay on track.
+7. **Kanban Tracking**: All tasks must be broken down and tracked in `memory/KANBAN.md` using markdown checkboxes (`- [ ]`, `- [/]`, `- [x]`). Always review the Kanban board to stay on track.

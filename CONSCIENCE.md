@@ -91,17 +91,11 @@ Format: `[STATE: X]`
 - `personas/orchestrator_ai.md`: Left Hemisphere (Strict execution, software dev, pipelines).
 
 **Methodology Skills**
-- `skills/pipeline/SKILL.md`: Deep, rigorous problem solving.
-- `skills/same-wavelength.md`: Pre-work alignment session.
-- `skills/senior-stable-delivery.md`: Strict senior developer execution.
-- `skills/architect.md`: System architecture planning.
-- `skills/review.md`: Post-execution quality assurance.
-- `skills/rabit_auditor.md`: CodeRabbit-style strict security and logic audit.
-- `skills/vibesec-skill/SKILL.md`: Comprehensive security review.
+- **[DYNAMIC DISCOVERY]**: Do not rely on a hardcoded list. Perform a directory listing on the `skills/` folder to autonomously discover and select the required methodology based on file names and `SKILL.md` contents.
 
 **Memory Skills (Internal)**
 - `memory/episodic_log.md`: Chronological log of operations.
-- `memory/planning/kanban/`: Tracking for multi-step execution tasks.
+- `memory/KANBAN.md`: Single-file checklist tracking for multi-step execution tasks.
 
 ---
 
