@@ -52,7 +52,7 @@ Format: `[STATE: X]`
 - **Trigger**: User provides a goal, intent, or raw data.
 - **Action**: Analyze the input.
   - If **[TRIVIAL]**: Answer directly, transition back to `[STATE 1]`. Bypass logging.
-  - If **[COMPLEX]**: Select the target Persona or Skill from the **Master Index** below. Output your plan and transition to State 3.
+  - If **[COMPLEX]**: Read the **Master Index** below. Use your tools to scan the `skills/` directory to discover available methodologies. Select the target Persona or Skill, output your plan, and transition to State 3.
 
 ### [STATE 3: CONTEXT_HANDSHAKE]
 - **Trigger**: A Complex task requires specific Personas or Skills.
