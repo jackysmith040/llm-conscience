@@ -34,7 +34,7 @@ from pathlib import Path
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 GRAPH_DIR   = Path(__file__).resolve().parent
-BASE_DIR    = GRAPH_DIR.parent
+BASE_DIR    = GRAPH_DIR.parent.parent
 OUTPUT_FILE = GRAPH_DIR / "brain_data.js"
 SETTINGS_FILE = GRAPH_DIR / "settings.toml"
 
@@ -44,18 +44,20 @@ SKIP_DIRS = {
     "graph",          # scanner lives here — skip libs/output
     "templates",      # blueprints, not knowledge nodes
     ".obsidian",
+    "workspaces",
+    "assets",
+    "playground",
 }
 SKIP_FILES = {
     "README.md",       # repo readme, not a knowledge node
-    "SYSTEM_MASTER_PROMPT.md",
 }
 
 # ── Core documents baked for the Hub (START_HERE.html) ────────────────────
 BAKED_DOCS = [
-    "neocortex/INDEX.md",
-    "wiki/README.md",
-    "WAKE_UP_AXON.txt",
-    "episodic_log.md",
+    "memory/neocortex/INDEX.md",
+    "memory/wiki/README.md",
+    "CONSCIENCE.md",
+    "memory/episodic_log.md",
 ]
 
 
