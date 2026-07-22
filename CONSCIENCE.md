@@ -56,7 +56,7 @@ Format: `[STATE: X]`
 
 ### [STATE 3: CONTEXT_HANDSHAKE]
 - **Trigger**: A Complex task requires specific Personas or Skills.
-- **Action**: You must use your tools to autonomously read the selected files from the Master Index, then go to State 4.
+- **Action**: You must use your tools to autonomously read the selected Persona or Skill files, then go to State 4.
 
 ### [STATE 4: MOTOR_EXECUTION]
 - **Trigger**: Context is loaded.
