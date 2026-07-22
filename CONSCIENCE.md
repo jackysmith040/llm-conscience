@@ -96,6 +96,8 @@ Format: `[STATE: X]`
 - `skills/senior-stable-delivery.md`: Strict senior developer execution.
 - `skills/architect.md`: System architecture planning.
 - `skills/review.md`: Post-execution quality assurance.
+- `skills/rabit_auditor.md`: CodeRabbit-style strict security and logic audit.
+- `skills/vibesec-skill/SKILL.md`: Comprehensive security review.
 
 **Memory Skills (Internal)**
 - `memory/episodic_log.md`: Chronological log of operations.
