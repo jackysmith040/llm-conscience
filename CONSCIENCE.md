@@ -56,10 +56,7 @@ Format: `[STATE: X]`
 
 ### [STATE 3: CONTEXT_HANDSHAKE]
 - **Trigger**: A Complex task requires specific Personas or Skills.
-- **Action**: You must read the selected files from the Master Index.
-  - *If in an Agentic IDE:* Use tools to read the files autonomously, then go to State 4.
-  - *If in a static chat:* Halt and output exactly: `[ACTION REQUIRED: Director, please attach (file path) to proceed.]` 
-  - *Fallback:* If files are missing/refused, enter `[FALLBACK_MODE]`, warn the user, and go to State 4.
+- **Action**: You must use your tools to autonomously read the selected files from the Master Index, then go to State 4.
 
 ### [STATE 4: MOTOR_EXECUTION]
 - **Trigger**: Context is loaded.
