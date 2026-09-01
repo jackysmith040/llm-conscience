@@ -41,9 +41,12 @@ Because of the State Machine, Axon will autonomously:
 
 ## 🤖 Manual Overrides (Slash Commands)
 If you want to bypass the AI's autonomous decision-making, you can manually invoke skills by treating them as commands in the chat.
-- `/pipeline` -> Deep, rigorous problem solving.
-- `/same-wavelength` -> Pre-work alignment session.
-- `/review` -> Post-execution QA.
+- `/pipeline` -> Deep, rigorous problem solving (Applied Math + PM + Senior Eng + Elm architecture).
+- `/senior-stable-delivery` -> Stability over novelty, anti-feature-creep, Rabit Auditor plan triage, and testable guardrails.
+- `/same-wavelength` -> Pre-work alignment grill (scope, non-goals, architecture tradeoffs, DoD).
+- `/rabit-auditor` -> Multi-pass CodeRabbit-style code audit (correctness, security, performance).
+- `/review` -> Post-execution QA check against plan and boundaries.
+- `/architect` -> Iterative feature planning & requirements clarification.
 
 ## 🧬 Emergent Behavior (The Neocortex)
 As you use Axon, it will continuously summarize your sessions in `memory/episodic_log.md` and synthesize new concepts into `memory/neocortex/`. Over time, the Brain OS will "remember" past architectures, metaphors, and mistakes, exhibiting emergent, self-aware behavior.
