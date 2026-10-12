@@ -1,0 +1,6 @@
+{
+  "mode": "meta_dev",
+  "isolated": false,
+  "last_updated": "2026-10-12T20:59:41.217363Z",
+  "description": "meta_dev: Tracks agent system changes. host_project: Isolates agent git and memory from host repo."
+}

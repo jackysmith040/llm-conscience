@@ -15,36 +15,20 @@ Update this file after every completed feature. Any AI agent reading this should
 ## Progress
 
 ### Phase 1 — Foundation
+- [ ] 01 Setup & Architecture Scaffolding
+- [ ] 02 Core Models & Domain Logic
+- [ ] 03 Database / Storage Layer
+- [ ] 04 API & Service Integration
 
-- [ ] 01 Homepage
-- [ ] 02 Auth
-- [ ] 03 PostHog Initialization
-- [ ] 04 Database Schema
+### Phase 2 — Implementation & Feature Core
+- [ ] 05 Feature Scaffolding
+- [ ] 06 Business Logic & State Machines
+- [ ] 07 UI & Interactive Components
 
-### Phase 2 — Profile Page
-
-- [ ] 05 Profile Page — Full UI
-- [ ] 06 Profile Save Logic
-- [ ] 07 AI Profile Extraction from Resume
-- [ ] 08 Resume PDF Generation from Profile
-
-### Phase 3 — Find Jobs Page
-
-- [ ] 09 Find Jobs Page — Full UI
-- [ ] 10 Adzuna Job Discovery
-- [ ] 11 Filter + Sort + Pagination
-
-### Phase 4 — Job Details Page
-
-- [ ] 12 Job Details Page — Full UI
-- [ ] 13 Company Research Agent
-
-### Phase 5 — Dashboard
-
-- [ ] 14 Dashboard Page — Full UI
-- [ ] 15 Stats Bar — Real Data
-- [ ] 16 Recent Activity — Real Data
-- [ ] 17 Analytics Charts — PostHog Data
+### Phase 3 — Verification & Polish
+- [ ] 08 Automated Testing & Edge Cases
+- [ ] 09 Performance & Security Review
+- [ ] 10 Session Handoff & Documentation
 
 ---
 
