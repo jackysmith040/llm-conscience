@@ -1,4 +1,4 @@
-# 🧠 Conscience OS (Axon v2.0)
+# 🧠 Conscience OS (Axon v2.5)
 
 > A deterministic, self-reflecting, self-healing, self-modifying, self-correcting, and self-evolving AI operating system for pair programming and autonomous software engineering.
 
@@ -32,16 +32,22 @@ Every single response from the agent is bound to a strict 3-axis operational lif
 - **Intent Axis**: `ALIGNMENT`, `ARCHITECTURE`, `IMPLEMENTATION`, `AUDIT_REVIEW`, `CRAFT_POLISH`, `DECONSTRUCTION`, `META_EVOLUTION`.
 - **Pacing Axis**: `BITE` (default), `STANDARD`, `FAST`.
 
-### 2. Cognitive Pacing & Anti-Code-Vomit Protocol (Law 20)
-Prevents AI models from dumping 300+ unreviewed lines of code:
+### 2. The Main Flow Pipeline (Idea → Ship)
+The declared canonical engineering spine:
+```text
+/grill (or /same-wavelength)
+   └─▶ /to-spec           ← synthesize discussion into versioned spec
+         └─▶ /to-tickets  ← decompose spec into tracer-bullet vertical slices
+               └─▶ /implement (or /implement-spec for parallel multi-agent)
+                     └─▶ /code-review (or /rabit-auditor for security audit)
+                           └─▶ /retro   ← audit environment, close the loop
+```
+
+### 3. Cognitive Pacing & Anti-Code-Vomit Protocol (Law 20)
+Prevents AI models from dumping unreviewed code:
 - **Change Budget**: Under `PACE: BITE`, modifications are strictly throttled to **30–50 lines per turn**.
 - **Digest-Before-Diff**: The agent MUST preface every code change with a 2-line explanation (*Intent* & *Rationale*).
 - **Velocity Slider**: Toggle speed dynamically using `/pace bite`, `/pace standard`, or `/pace fast`.
-
-### 3. Dual-Mode Git Tracking Isolation (`/git-mode`)
-- **`host_project` Mode (Isolated)**: When Conscience OS is added to an external client or production codebase, the agent's internal git tracking is disengaged. Brain memory, episodic logs, and graph data are automatically shielded via the host `.gitignore`.
-- **`meta_dev` Mode (Tracked)**: When improving the Conscience OS itself, git tracking is enabled for core OS commits and releases.
-- Run `/git-mode status` or `/git-mode isolate` to switch modes instantly.
 
 ### 4. Zero-Clutter Architecture (`.conscience/`)
 All cognitive subsystems are cleanly encapsulated inside a single folder, keeping the project root spotless:
@@ -49,6 +55,7 @@ All cognitive subsystems are cleanly encapsulated inside a single folder, keepin
 <workspace-root>/
 ├── AGENTS.md               <-- Lightweight root bootloader pointer
 ├── GEMINI.md               <-- Workspace rule entry point
+├── GLOSSARY.md             <-- Ubiquitous language contract
 ├── SETUP.md                <-- Instant copy-paste bootstrap prompts
 └── .conscience/
     ├── CONSCIENCE.md       <-- The Soul, 20 Laws, Autopoiesis Super Command
@@ -56,7 +63,7 @@ All cognitive subsystems are cleanly encapsulated inside a single folder, keepin
     ├── git-mode.json       <-- Active isolation state configuration
     ├── memory/             <-- KANBAN.md, episodic_log.md, neocortex/, wiki/, graph/
     ├── personas/           <-- OrchestratorAI (Left Brain) & Evie (Right Brain)
-    ├── skills/             <-- 39 modular Antigravity skills & slash commands
+    ├── skills/             <-- 46 modular Antigravity skills & slash commands
     ├── scripts/            <-- git_mode_manager.py, deploy_skills.py
     └── rules/              <-- Hierarchical rule definitions
 ```
@@ -74,16 +81,18 @@ An autonomous meta-cognitive cycle executing all 5 evolutionary faculties:
 
 ---
 
-## 🗂️ The Master Catalog (39 Specialized Skills)
+## 🗂️ The Master Catalog (46 Specialized Skills)
 
 | Category | Skills & Slash Commands |
 | :--- | :--- |
-| **Architecture & Strategy** | `/autopoiesis` · `/pace` · `/git-mode` · `/senior-stable-delivery` · `/same-wavelength` (Alias: `/grill`) · `/architect` · `/pipeline` · `/session-handoff` · `/remember` · `/recover` · `/review` · `/the-basis` · `/ste-writing` |
+| **Pipeline & Flow** | `/same-wavelength` (Alias: `/grill`) · `/to-spec` · `/to-tickets` · `/implement-spec` · `/review` · `/retro` |
+| **Architecture & Strategy** | `/autopoiesis` · `/pace` · `/git-mode` · `/senior-stable-delivery` · `/architect` · `/wayfinder` · `/prototype` · `/pipeline` · `/session-handoff` · `/remember` · `/recover` · `/the-basis` · `/ste-writing` |
 | **Security & Auditing** | `/rabit-auditor` · `/vibesec` · `/review-animations` |
-| **UI, Craft & Design** | `/refactoring-ui` · `/nothing-design` · `/emil-design-eng` · `/i-am-impeccable` · `/imprint` · `/color-palette` · `/favicon-gen` · `/applying-brand-guidelines` |
+| **UI, Craft & Design** | `/impeccable` (Alias: `/i-am-impeccable`) · `/refactoring-ui` · `/nothing-design` · `/emil-design-eng` · `/imprint` · `/color-palette` · `/favicon-gen` · `/applying-brand-guidelines` |
 | **Motion & Interactivity** | `/gsap-plugins` · `/motion-first-learning` · `/visual-learning-software` · `/playground-builder` · `/excalidraw-diagram` · `/mermaid-visualizer` · `/beautiful-article` |
 | **Finance & Research** | `/financial-analysis` · `/stock-analysis` · `/excel-generator` · `/systematic-research` |
 | **AST & Tooling** | `/graphify-ide` · `/git-workflow` · `/skill-creator` |
+
 
 ---
 

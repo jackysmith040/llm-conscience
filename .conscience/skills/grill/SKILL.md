@@ -14,3 +14,8 @@ When triggered, immediately invoke the full **Same Wavelength** alignment interv
 2. Run grill blocks (Scope, Users, Architecture, Failure/Security, Done, Persona).
 3. Challenge pass on hidden assumptions and feature creep.
 4. Output Alignment Brief with locked decisions and wait for explicit confirmation.
+
+---
+
+> ✅ **Alignment brief approved?** → Next: run `/to-spec` to synthesize this conversation into a publishable spec.
+

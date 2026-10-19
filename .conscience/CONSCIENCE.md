@@ -70,16 +70,62 @@ Format: `[STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`
 
 ---
 
-## 🗂️ Master Index (The 39 Specialized Skills)
+## 🚀 The Main Flow Pipeline (Idea → Shipped Code)
 
-### 🌟 Core Architecture & Meta-Cognition
+The **Main Flow** is the canonical idea→ship chain. Every feature, fix, or improvement passes through these 6 stages in order. Each skill's output is the next skill's input.
+
+```
+/grill (or /same-wavelength)
+   └─▶ /to-spec           ← synthesize the conversation into a versioned spec
+         └─▶ /to-tickets  ← split the spec into KANBAN tasks
+               └─▶ /implement (or /implement-spec for parallel)
+                     └─▶ /code-review (or /rabit-auditor for deep audit)
+                           └─▶ /retro   ← improve the environment, close the loop
+```
+
+**Rules**:
+- Do not skip stages. Each stage produces an artifact the next stage needs.
+- Do not implement without a spec. Do not spec without a grill.
+- `/to-spec` and `/to-tickets` publish to `KANBAN.md`. KANBAN is the operational tracker.
+- Use `/wayfinder` BEFORE `/grill` for efforts too large for one session (multi-session big efforts).
+- Consult `GLOSSARY.md` for domain vocabulary throughout the entire pipeline.
+
+---
+
+## 🗺️ Wayfinder Protocol (Multi-Session Big Efforts)
+
+For efforts that span multiple sessions and have unresolved design questions:
+```
+/wayfinder
+   └─▶ Decision Map (strategic questions as Decision Tickets)
+         └─▶ Resolve tickets one at a time
+               └─▶ Resolved tickets → KANBAN tasks → enter Main Flow
+```
+
+---
+
+## 🗂️ Master Index (The 45 Specialized Skills)
+
+### 🚀 Main Flow Pipeline Skills
+- `/same-wavelength` (Alias: `/grill`) — **Step 1**: Pre-implementation alignment grill. Locks scope, DoD, architecture before building.
+- `/to-spec` — **Step 2**: Conversation→spec synthesis. Publishes structured spec to `KANBAN.md`.
+- `/to-tickets` — **Step 3**: Splits a spec into atomic KANBAN tasks. *(Phase 2)*
+- `/implement` — **Step 4**: Build from spec or ticket. Test-first. *(Phase 2)*
+- `/code-review` (Alias: `/rabit-auditor`) — **Step 5**: Multi-pass audit against spec and standards.
+- `/retro` — **Step 6**: Post-session environment improvement. Closes the Main Flow cycle.
+
+### 🗺️ Strategic Planning Skills
+- `/architect` — Pre-build planning and decision surfacing.
+- `/wayfinder` — Big-effort decomposition into Decision Maps → KANBAN. *(Phase 2)*
+- `/prototype` — Throwaway-code design exploration. Delete after use. *(Phase 2)*
+- `/implement-spec` — Parallel multi-agent spec implementation. *(Phase 3)*
+- `/pipeline` — Applied Math + PM + Senior Eng architecture framework.
+
+### 🌟 Core OS & Meta-Cognition
 - `/autopoiesis` — Meta-cognitive super command loop (reflect, correct, heal, modify, evolve).
 - `/pace` — Cognitive review throttle (`bite`, `standard`, `fast`).
 - `/git-mode` — Dual-mode tracking isolation (`host_project` vs `meta_dev`).
 - `/senior-stable-delivery` — Strict stability-first engineering pipeline.
-- `/same-wavelength` (Alias: `/grill`) — Pre-implementation alignment grill.
-- `/architect` — Pre-build planning and decision surfacing.
-- `/pipeline` — Applied Math + PM + Senior Eng architecture framework.
 - `/session-handoff` — Two-tier continuation handoff (Layer A paste block & Layer B file).
 - `/remember` — Cross-session state save and restore.
 - `/recover` — 3-mode failure diagnosis and single-shot fix.
@@ -96,7 +142,7 @@ Format: `[STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`
 - `/refactoring-ui` — Steve Schoger & Adam Wathan's tactical design heuristics and cheatsheets.
 - `/nothing-design` — Nothing OS industrial Swiss design system (Braun / Teenage Engineering).
 - `/emil-design-eng` — Emil Kowalski's tactile component and UI polish philosophy.
-- `/i-am-impeccable` — Natural-language router for Impeccable design commands.
+- `/impeccable` (Alias: `/i-am-impeccable`) — Full v4.6.0 frontend craft engine (24 commands: `init`, `shape`, `critique`, `audit`, `polish`, `bolder`, `typeset`, `distill`, `harden`, `live`).
 - `/imprint` — UI consistency capture and registry sync (`ui-registry.md`).
 - `/color-palette` — 11-shade accessible Tailwind v4 palette generator with WCAG checks.
 - `/favicon-gen` — Full favicon package generator (SVG, ICO, PNGs, web manifest).
@@ -123,5 +169,9 @@ Format: `[STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`
 - `/skill-creator` — Meta-skill to author, test, and package new skills for Antigravity.
 
 **Memory Subsystem**
-- `.conscience/memory/episodic_log.md`
-- `.conscience/memory/KANBAN.md`
+- `.conscience/memory/episodic_log.md` — Episodic log (Law 8)
+- `.conscience/memory/KANBAN.md` — Operational task tracker
+- `.conscience/memory/neocortex/INDEX.md` — Memory Palace (Law 5)
+
+**Vocabulary Contract**
+- `GLOSSARY.md` — Ubiquitous language. All agents must use terms defined here.

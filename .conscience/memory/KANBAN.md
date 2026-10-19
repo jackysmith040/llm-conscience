@@ -8,4 +8,4 @@ Agents must update checkboxes (`- [ ]`, `- [/]`, `- [x]`) as they progress.
 ## 🚧 In Progress
 
 ## ✅ Done
-- [x] Conscience OS v2.0 initialized and ready
+- [x] Conscience OS v2.5 initialized and ready

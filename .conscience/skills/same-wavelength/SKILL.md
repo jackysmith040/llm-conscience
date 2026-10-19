@@ -5,10 +5,12 @@ description: >-
   and definition of done before coding. User-invoked only. Trigger: /same-wavelength, same wavelength.
 ---
 
-# /same-wavelength
+# /same-wavelength (alias: /grill)
+
+**Pipeline position**: Step 1 of 6 — runs before `/to-spec`.
 
 ## What
-A structured alignment session before implementation—like a rigorous "grill me," but oriented toward shipping safely, not debate for its own sake. Output is written locks: scope, non-goals, decisions, open questions, and definition of done.
+A structured alignment session before implementation. Output is written locks: scope, non-goals, decisions, open questions, and definition of done. Nothing is built until the brief is approved.
 
 ## Session Flow
 1. **Mirror (1 paragraph)**: Restate the user's goal in plain language. Ask: *"Is this the problem we're solving?"*
@@ -22,3 +24,7 @@ A structured alignment session before implementation—like a rigorous "grill me
 3. **Challenge pass**: Push on hidden assumptions, duplicate systems, creep risks.
 4. **Alignment Brief**: Output clean brief summarizing Locked IN, Locked OUT, Decisions table, and DoD.
 5. **Explicit Consent**: Do not write production code until user confirms the brief.
+
+---
+
+> ✅ **Alignment brief approved?** → Next: run `/to-spec` to synthesize this conversation into a publishable spec.

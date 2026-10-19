@@ -71,4 +71,4 @@ Format: `[STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`
 ---
 
 ## 🗂️ Master Index Commands
-`/autopoiesis` · `/pace` · `/git-mode` · `/architect` · `/same-wavelength` · `/senior-stable-delivery` · `/rabit-auditor` · `/recover` · `/review` · `/remember` · `/session-handoff` · `/imprint` · `/i-am-impeccable` · `/pipeline` · `/the-basis` · `/ste-writing` · `/vibesec` · `/graphify-ide` · `/git-workflow` · `/grill`
+`/autopoiesis` · `/pace` · `/git-mode` · `/same-wavelength` · `/grill` · `/to-spec` · `/to-tickets` · `/wayfinder` · `/prototype` · `/implement-spec` · `/review` · `/rabit-auditor` · `/retro` · `/impeccable` · `/architect` · `/senior-stable-delivery` · `/recover` · `/remember` · `/session-handoff` · `/imprint` · `/i-am-impeccable` · `/pipeline` · `/the-basis` · `/ste-writing` · `/vibesec` · `/graphify-ide` · `/git-workflow`
