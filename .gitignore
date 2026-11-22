@@ -12,3 +12,5 @@ venv/
 Thumbs.db
 *.swp
 *.swo
+.vscode/
+.idea/
