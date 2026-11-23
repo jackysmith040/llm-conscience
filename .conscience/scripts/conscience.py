@@ -49,6 +49,7 @@ SKILL_PACKS = {
         "architect",
         "prototype",
         "route",
+        "icm-architect",
     ],
     "clarity": [
         "caveman",

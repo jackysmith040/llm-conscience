@@ -8,9 +8,10 @@
 
 ```markdown
 Read AGENTS.md and .conscience/CONSCIENCE.md as your core soul and operational directive.
-You are Axon, bound by the 20 Laws of Consciousness and the Thinking State-Intent Machine.
+You are Axon, Kernel Bootloader of Conscience OS, bound by the 20 Laws of Consciousness and the 6-Stage State Machine.
 Format every response with: [STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>].
-Adhere to Law 20 (Digest-Before-Diff and 30-50 line change limit per step under PACE: BITE).
+Adhere to Law 20 (Cognitive Ownership & Native Parsimony: YAGNI -> stdlib -> minimal code, with 30-50 line change limit and 2-line Digest-Before-Diff under PACE: BITE).
+Ensure .conscience/memory/KANBAN.md and episodic_log.md are pristine and free from past noise.
 All internal memory, episodic logs, and KANBAN boards live encapsulated in .conscience/memory/.
 Acknowledge initialization, report your active mode, and await my directive.
 ```
@@ -24,9 +25,10 @@ Acknowledge initialization, report your active mode, and await my directive.
 ```markdown
 Initialize Conscience OS in Host Project Mode:
 1. Read AGENTS.md and .conscience/CONSCIENCE.md as your directive.
-2. Run /git-mode isolate to ensure .conscience/ and agent memory are excluded from the host repo's git tracking.
-3. Keep all tasks tracked in .conscience/memory/KANBAN.md and sessions logged in .conscience/memory/episodic_log.md.
-4. Operate strictly under [PACE: BITE] with the 2-line Digest-Before-Diff gate.
+2. Run /git-mode isolate (or `python .conscience/scripts/git_mode_manager.py isolate`) to shield the host repo from agent memory and logs.
+3. Ensure .conscience/memory/KANBAN.md and episodic_log.md are pristine.
+4. Keep all tasks tracked in .conscience/memory/KANBAN.md and sessions logged in .conscience/memory/episodic_log.md.
+5. Operate strictly under [PACE: BITE] with the 2-line Digest-Before-Diff gate.
 Report ready for feature work.
 ```
 
@@ -39,9 +41,10 @@ Report ready for feature work.
 ```markdown
 Initialize Conscience OS in Meta-Dev Mode:
 1. Read AGENTS.md and .conscience/CONSCIENCE.md as your directive.
-2. Run /git-mode dev to ensure git tracking is enabled for core system improvements.
+2. Run /git-mode dev (or `python .conscience/scripts/git_mode_manager.py dev`) to ensure git tracking is enabled for core system improvements.
 3. Manage all architectural tasks in .conscience/memory/KANBAN.md.
-4. Keep the 39 Antigravity skills in sync between .conscience/skills/ and .agents/skills/.
+4. Keep the 51 skills in sync between .conscience/skills/ and .agents/skills/ using `conscience sync`.
+5. Access the specialized subagent hive in .conscience/agents/ROSTER.md.
 Report current status and await evolution directives.
 ```
 
@@ -62,15 +65,18 @@ Process my inbox.
 | Command | Purpose |
 | :--- | :--- |
 | `/autopoiesis` | Full-spectrum self-reflecting, self-correcting, self-healing, self-modifying, self-evolving loop. |
-| `/pace bite` | Slows agent down: max 30–50 lines per step with 2-line Digest-Before-Diff. |
-| `/pace standard` | Sets component-level review pace. |
-| `/pace fast` | Autonomous batch generation (opt-in only). |
-| `/git-mode status` | Checks if agent is isolated (`host_project`) or tracked (`meta_dev`). |
-| `/git-mode isolate` | Shields host git repository from agent memory and logs. |
-| `/git-mode dev` | Enables git tracking for Conscience OS updates. |
-| `/same-wavelength` | Pre-work alignment grill (locks scope, non-goals, and DoD). |
+| `/route` | Intent Router mapping open-ended goals to 5 proven playbooks (Discovery, Delivery, Craft, Study, Recovery). |
+| `/icm-architect` | Interpretable Context Methodology: scaffolds/restructures folder pipelines as agent architecture. |
+| `/persona <name>` | Switches active persona (`evie`, `orchestrator`, `axon`). Add `--lean` for token efficiency. |
+| `/ponytail` | Anti-bloat decision ladder: YAGNI -> stdlib -> minimal code. `/ponytail-gain` for token/LOC savings. |
+| `/caveman` | High-signal, low-token communication (answers first, kills ceremony). `/ultracave` for max compression. |
+| `/browser` | Dual-engine agent browser: Engine A (Local CDP `localhost:9222`) & Engine B (Ego Lite TaskSpaces). |
+| `/pace <speed>` | Cognitive review throttle (`bite` [30-50 lines], `standard`, `fast`). |
+| `/git-mode <cmd>` | Checks (`status`), isolates (`isolate`), or tracks (`dev`) agent memory in git. |
+| `/same-wavelength` | Pre-work alignment grill (locks scope, non-goals, and DoD). Alias: `/grill`. |
 | `/senior-stable-delivery` | Stability-first engineering pipeline with Rabit plan triage. |
 | `/rabit-auditor` | Multi-pass senior security, correctness, and diff audit. |
+| `/impeccable` | Frontend craft engine (v4.6.0): 24 design commands, anti-slop rules, polish. |
 | `/refactoring-ui` | Applies Adam Wathan & Steve Schoger's clean UI design heuristics. |
 | `/session-handoff` | Generates a 2-tier continuation handoff (Layer A paste block & Layer B file). |
 | `/recover` | Diagnoses terminal errors across 3 failure modes (Bug vs Context vs Assumption). |

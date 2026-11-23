@@ -17,3 +17,4 @@ Agents must update checkboxes (`- [ ]`, `- [/]`, `- [x]`) as they progress.
 - [x] `[TICKET-05]` First-Class Integration of Ponytail & Caveman Skills (`/ponytail`, `/caveman`, `/ultracave`, `/ponytail-gain`)
 - [x] `[TICKET-06]` Lightweight Agent Browser Skill (`/browser` with Local CDP Engine A & Ego Lite Engine B)
 - [x] `[TICKET-07]` Full System Verification & Episodic Checkpoint (50 skills verified, CLI validated, milestone logged)
+- [x] `[TICKET-08]` ICM Architect Integration (`/icm-architect`: Interpretable Context Methodology installed, 51 skills synced)

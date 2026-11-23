@@ -30,3 +30,6 @@
   - Portable agent specs stored in .conscience/agents/ and mirrored to .agents/agents/.
   - Master roster created in .conscience/agents/ROSTER.md.
   - conscience CLI updated with `conscience agents` command.
+- `[ICM_ARCHITECT_INTEGRATED]` - RinDig/icm-architect integrated into .conscience/skills/ and .agents/skills/ (51 total skills).
+  - Enables Interpretable Context Methodology: folder structures as agent architecture (Build & Restructure modes).
+  - SETUP.md, CONSCIENCE.md, and AGENTS.md updated. All skill packs 100% complete. Ready to push to GitHub.

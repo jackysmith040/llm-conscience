@@ -117,6 +117,7 @@ For efforts that span multiple sessions and have unresolved design questions:
 
 ### 🗺️ Strategic Planning Skills
 - `/route` — Intent Router mapping open-ended goals to proven playbooks (Discovery, Delivery, Craft, Study, Recovery).
+- `/icm-architect` — Interpretable Context Methodology (folder structure as agent architecture; build/restructure workspaces).
 - `/architect` — Pre-build planning and decision surfacing.
 - `/wayfinder` — Big-effort decomposition into Decision Maps → KANBAN. *(Phase 2)*
 - `/prototype` — Throwaway-code design exploration. Delete after use. *(Phase 2)*
