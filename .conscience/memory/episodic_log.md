@@ -33,3 +33,7 @@
 - `[ICM_ARCHITECT_INTEGRATED]` - RinDig/icm-architect integrated into .conscience/skills/ and .agents/skills/ (51 total skills).
   - Enables Interpretable Context Methodology: folder structures as agent architecture (Build & Restructure modes).
   - SETUP.md, CONSCIENCE.md, and AGENTS.md updated. All skill packs 100% complete. Ready to push to GitHub.
+- `[MANIFEST_AND_INTENT_GRILL_LOCKED]` - Resolved skill saturation & context fatigue scaling architecture:
+  - Generated .conscience/skills.toml manifest indexing all 51 skills with domains, triggers, summaries, and install status.
+  - Implemented Matt Pocock style Intent Grilling Decision Tree inside /route (asks targeted questions to deduce exact playbook rather than guessing).
+  - Upgraded I/O constraint from Tri-Axis to Quad-Axis: [STATE: <LIFECYCLE> | DOMAIN: <DOMAIN> | INTENT: <TAXONOMY> | PACE: <VELOCITY>] for strict domain tracking.

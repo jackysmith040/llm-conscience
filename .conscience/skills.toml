@@ -1,0 +1,324 @@
+# ==============================================================================
+# Conscience OS Skills Dependency Manifest (skills.toml)
+# Authoritative registry of all capabilities, domains, triggers, and metadata.
+# ==============================================================================
+
+[manifest]
+version = "3.1.0"
+last_updated = "2026-11-23"
+total_skills = 51
+
+[domains]
+planning = "High-level discovery, specifications, decision mapping, and architectural breakdown"
+engineering = "Production code delivery, testing, stability, security, and refactoring"
+craft = "UI/UX design, visual engineering, tactile feedback, and anti-slop styling"
+clarity = "Token compression, clean prose, session continuity, and conceptual study"
+motion = "Interactive widgets, animations, diagrams, and visual simulations"
+specialized = "Domain-specific tools for finance, spreadsheets, research, and graph extraction"
+
+[skills.applying-brand-guidelines]
+domain = "craft"
+trigger = "/applying-brand-guidelines"
+summary = "This skill applies consistent corporate branding and styling to all generated documents including colors, fonts, layouts, and messaging"
+installed = true
+
+[skills.architect]
+domain = "planning"
+trigger = "/architect"
+summary = " Plan before you build. Reads project context files, asks focused questions one at a time, surfaces undecided architectural decisions, and p"
+installed = true
+
+[skills.autopoiesis]
+domain = "clarity"
+trigger = "/autopoiesis"
+summary = " Super command executing full-spectrum self-reflecting, self-correcting, self-healing, self-modifying, and self-evolving meta-cognitive rout"
+installed = true
+
+[skills.beautiful-article]
+domain = "motion"
+trigger = "/beautiful-article"
+summary = " Render user content (URL, PDF, DOCX, Markdown, plain text, or notes) into an offline-shareable, visually stunning single-file HTML article "
+installed = true
+
+[skills.browser]
+domain = "engineering"
+trigger = "/browser"
+summary = " Lightweight, agent-first browser skill. Replaces heavy headless Chrome with dual-engine execution: Engine A (Local CDP attachment to open C"
+installed = true
+
+[skills.caveman]
+domain = "clarity"
+trigger = "/caveman"
+summary = " Radical token efficiency and anti-fatigue communication skill. Strips conversational ceremony, pleasantries, and filler words while fiercel"
+installed = true
+
+[skills.color-palette]
+domain = "craft"
+trigger = "/color-palette"
+summary = " Generate complete, accessible colour palettes from a single brand hex. Produces 11-shade scale (50-950), semantic tokens, dark mode variant"
+installed = true
+
+[skills.emil-design-eng]
+domain = "craft"
+trigger = "/emil-design-eng"
+summary = " Encodes Emil Kowalski's philosophy on UI polish, component craft, animation physics, and the invisible details that make software feel grea"
+installed = true
+
+[skills.excalidraw-diagram]
+domain = "motion"
+trigger = "/excalidraw-diagram"
+summary = "Generate Excalidraw diagrams from text content. Supports three output modes - Obsidian (.md), Standard (.excalidraw), and Animated (.excalid"
+installed = true
+
+[skills.excel-generator]
+domain = "specialized"
+trigger = "/excel-generator"
+summary = " Professional Excel spreadsheet creation with a focus on aesthetics and data analysis. Use when creating spreadsheets for organizing, analyz"
+installed = true
+
+[skills.favicon-gen]
+domain = "craft"
+trigger = "/favicon-gen"
+summary = "'Generate custom favicons from logos, text, or brand colours. Produces favicon.svg, favicon.ico, apple-touch-icon.png, icon-192/512.png, and"
+installed = true
+
+[skills.financial-analysis]
+domain = "specialized"
+trigger = "/financial-analysis"
+summary = "'Research company financials, market prices, SEC filings, earnings calls, investor presentations, options, forex, crypto, and macroeconomic "
+installed = true
+
+[skills.git-mode]
+domain = "engineering"
+trigger = "/git-mode"
+summary = " Inspect or toggle Conscience OS Git tracking mode: 'host_project' (isolates agent git & memory from host repo) vs 'meta_dev' (tracks agent "
+installed = true
+
+[skills.git-workflow]
+domain = "engineering"
+trigger = "/git-workflow"
+summary = " Canonical portable Git workflow for feature branches, pull requests, develop/main releases, and branch cleanup. Trigger: /git-workflow."
+installed = true
+
+[skills.graphify-ide]
+domain = "specialized"
+trigger = "/graphify-ide"
+summary = " Custom graphify workflow running inline in IDE without API keys to extract semantic AST graphs and generate executable Python run scripts. "
+installed = true
+
+[skills.grill]
+domain = "planning"
+trigger = "/grill"
+summary = " Alias for /same-wavelength. Actively grill the user before complex or ambiguous tasks to uncover assumptions, challenge flaws, and force ex"
+installed = true
+
+[skills.gsap-plugins]
+domain = "motion"
+trigger = "/gsap-plugins"
+summary = "Official GSAP skill for GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, Scramble"
+installed = true
+
+[skills.i-am-impeccable]
+domain = "craft"
+trigger = "/i-am-impeccable"
+summary = " Natural-language router and alias for the Impeccable design engine (v4.6.0). Infers design intent and routes to all 24 Impeccable craft com"
+installed = true
+
+[skills.icm-architect]
+domain = "planning"
+trigger = "/icm-architect"
+summary = "Design a process, idea or body of knowledge into an ICM (Interpretable Context Methodology) workspace, where folder structure is the agent a"
+installed = true
+
+[skills.impeccable]
+domain = "craft"
+trigger = "/impeccable"
+summary = " Frontend craft and design engine (v4.6.0). Use to design, shape, critique, audit, polish, simplify, harden, animate, or elevate UI surfaces"
+installed = true
+
+[skills.implement-spec]
+domain = "engineering"
+trigger = "/implement-spec"
+summary = " Orchestrate parallel multi-agent implementation of a spec and ticket graph from KANBAN.md. Spawns worker subagents on unblocked tickets, ma"
+installed = true
+
+[skills.imprint]
+domain = "craft"
+trigger = "/imprint"
+summary = " Keep UI design consistent across every session. Captures new component patterns into your UI registry (ui-registry.md) and audits codebase "
+installed = true
+
+[skills.mermaid-visualizer]
+domain = "motion"
+trigger = "/mermaid-visualizer"
+summary = "Transform text content into professional Mermaid diagrams for presentations and documentation. Use when users ask to visualize concepts, cre"
+installed = true
+
+[skills.motion-first-learning]
+domain = "motion"
+trigger = "/motion-first-learning"
+summary = "Adaptive, motion-first learning for complex subjects. Use when explaining difficult concepts, transforming study materials into lessons, ana"
+installed = true
+
+[skills.nothing-design]
+domain = "craft"
+trigger = "/nothing-design"
+summary = "This skill should be used when the user explicitly says 'Nothing style', 'Nothing design', '/nothing-design', or directly asks to use/apply "
+installed = true
+
+[skills.pace]
+domain = "clarity"
+trigger = "/pace"
+summary = " Controls agent execution velocity and cognitive digest granularity: 'bite' (30-50 lines max, digest-before-diff, step confirmation), 'stand"
+installed = true
+
+[skills.pipeline]
+domain = "engineering"
+trigger = "/pipeline"
+summary = " Applied Mathematician + PM + Senior Eng pipeline framework: chain of thought, Elm architecture state isolation, honest testing, and Kanban "
+installed = true
+
+[skills.playground-builder]
+domain = "motion"
+trigger = "/playground-builder"
+summary = "Creates interactive HTML playgrounds — self-contained single-file explorers that let users configure something visually through controls, se"
+installed = true
+
+[skills.ponytail]
+domain = "engineering"
+trigger = "/ponytail"
+summary = " The 'laziest senior dev in the room' anti-bloat skill. Enforces the YAGNI decision ladder: native stdlib over custom code, one-liners, and "
+installed = true
+
+[skills.prototype]
+domain = "planning"
+trigger = "/prototype"
+summary = " Build throwaway code to answer a design, state model, or UI question before building for real. Strictly temporary — deleted or cleaned up o"
+installed = true
+
+[skills.rabit-auditor]
+domain = "engineering"
+trigger = "/rabit-auditor"
+summary = " Expert CodeRabbit-like Senior Staff Software Engineer and Security Auditor. Multi-pass review for correctness, security vulnerabilities, pe"
+installed = true
+
+[skills.recover]
+domain = "engineering"
+trigger = "/recover"
+summary = " Diagnose first, fix fast when execution breaks. Classifies failure into targeted bug, polluted context, or wrong assumption and outputs def"
+installed = true
+
+[skills.refactoring-ui]
+domain = "craft"
+trigger = "/refactoring-ui"
+summary = "'Apply the design principles from Adam Wathan and Steve Schoger's Refactoring UI book to build clean, professional, polished interfaces. Use"
+installed = true
+
+[skills.remember]
+domain = "clarity"
+trigger = "/remember"
+summary = " Never lose context between sessions. /remember save compresses session decisions and state; /remember restore recovers context at the start"
+installed = true
+
+[skills.retro]
+domain = "clarity"
+trigger = "/retro"
+summary = " Conduct a post-session retrospective. Audits navigation friction, missing guardrails, and coding standard violations. Improves the agent en"
+installed = true
+
+[skills.review]
+domain = "engineering"
+trigger = "/review"
+summary = " Check the work before it becomes a problem. Compares implementation to plan, audits architectural boundaries, and groups issues by Critical"
+installed = true
+
+[skills.review-animations]
+domain = "craft"
+trigger = "/review-animations"
+summary = "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; "
+installed = true
+
+[skills.route]
+domain = "planning"
+trigger = "/route"
+summary = " Conscience OS Intent Router. Maps open-ended requests or vague goals to proven multi-skill playbooks (Discovery, Delivery, Craft, Study, Re"
+installed = true
+
+[skills.same-wavelength]
+domain = "planning"
+trigger = "/same-wavelength"
+summary = " Pre-work alignment interview: lock requirements, architecture tradeoffs, non-goals, risk appetite, and definition of done before coding. Us"
+installed = true
+
+[skills.senior-stable-delivery]
+domain = "engineering"
+trigger = "/senior-stable-delivery"
+summary = " Strict senior engineer persona: stability over novelty, anti-feature-creep, Rabit Auditor triage (plan + pre-PR), AI harness discipline, an"
+installed = true
+
+[skills.session-handoff]
+domain = "clarity"
+trigger = "/session-handoff"
+summary = " Compact end-of-session continuation for humans and next agent. Filters out noise and outputs Layer A paste block and Layer B HANDOFF.md wit"
+installed = true
+
+[skills.skill-creator]
+domain = "clarity"
+trigger = "/skill-creator"
+summary = "Guide for creating or updating skills that extend Antigravity and Conscience OS via specialized knowledge, workflows, or tool integrations. "
+installed = true
+
+[skills.ste-writing]
+domain = "clarity"
+trigger = "/ste-writing"
+summary = " Rewrite prose (docs, READMEs, PRs, comments) into ASD-STE100 Simplified Technical English to eliminate AI slop, passive voice, and conversa"
+installed = true
+
+[skills.stock-analysis]
+domain = "specialized"
+trigger = "/stock-analysis"
+summary = "'Analyze stocks and companies using financial market data. Get company profiles, technical insights, price charts, insider holdings, and SEC"
+installed = true
+
+[skills.systematic-research]
+domain = "specialized"
+trigger = "/systematic-research"
+summary = " Evidence-driven research skill for AI research agents. Provides a rigorous, PRISMA-aligned workflow for systematic literature searching, sc"
+installed = true
+
+[skills.the-basis]
+domain = "clarity"
+trigger = "/the-basis"
+summary = " Deterministic epistemological engine breaking down complex math and abstract concepts from concrete first-principles physical intuition to "
+installed = true
+
+[skills.to-spec]
+domain = "planning"
+trigger = "/to-spec"
+summary = " Turn the current conversation into a structured spec and publish it to KANBAN.md. No interview — pure synthesis of what has already been di"
+installed = true
+
+[skills.to-tickets]
+domain = "planning"
+trigger = "/to-tickets"
+summary = " Break a spec or plan into tracer-bullet vertical tickets with explicit blocking edges, published directly to KANBAN.md. Run after /to-spec."
+installed = true
+
+[skills.vibesec]
+domain = "engineering"
+trigger = "/vibesec"
+summary = " Security auditing and vulnerability scanning skill for AI-generated code, application security, and secrets detection. Trigger: /vibesec."
+installed = true
+
+[skills.visual-learning-software]
+domain = "motion"
+trigger = "/visual-learning-software"
+summary = "Build browser-based visual learning software from lecture notes, textbooks, slide decks, documents, images, or other source materials. Use w"
+installed = true
+
+[skills.wayfinder]
+domain = "planning"
+trigger = "/wayfinder"
+summary = " Plan multi-session big efforts wrapped in fog as a shared Decision Map. Resolves architectural and design questions one at a time, graduati"
+installed = true
+
