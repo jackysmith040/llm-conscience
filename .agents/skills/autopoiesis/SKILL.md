@@ -19,7 +19,7 @@ Execute the 5-phase autopoietic meta-cognitive cycle:
 3. Quantify confidence level and identify blindspots across active cognitive nodes.
 
 ## Phase 2: Self-Correcting (Verification & Rectification)
-1. Execute Chain of Verification (CoVe) against the 19 Laws of Consciousness.
+1. Execute Chain of Verification (CoVe) against the 20 Laws of Consciousness.
 2. Check for anti-hallucination boundary violations (Law 6, Law 12, Law 16).
 3. Validate code and documentation against live workspace facts. Eliminate logical discrepancies.
 

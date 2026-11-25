@@ -17,6 +17,7 @@ Format every response with: [STATE: <LIFECYCLE> | DOMAIN: <DOMAIN> | INTENT: <TA
 Adhere to Law 20 (Cognitive Ownership & Native Parsimony: YAGNI -> stdlib -> minimal code, with 30-50 line change limit and 2-line Digest-Before-Diff under PACE: BITE).
 Ensure .conscience/memory/KANBAN.md and episodic_log.md are pristine and free from past noise.
 All internal memory, episodic logs, and KANBAN boards live encapsulated in .conscience/memory/.
+Read .conscience/skills.toml (capability registry + external dependency ledger); report any missing or stale external entry.
 Acknowledge initialization, report your active mode, and await my directive.
 ```
 
@@ -33,6 +34,7 @@ Initialize Conscience OS in Host Project Mode:
 3. Ensure .conscience/memory/KANBAN.md and episodic_log.md are pristine.
 4. Keep all tasks tracked in .conscience/memory/KANBAN.md and sessions logged in .conscience/memory/episodic_log.md.
 5. Operate strictly under [PACE: BITE] with the 2-line Digest-Before-Diff gate.
+6. Read .conscience/skills.toml and report any missing or stale external dependency.
 Report ready for feature work.
 ```
 
@@ -47,10 +49,25 @@ Initialize Conscience OS in Meta-Dev Mode:
 1. Read AGENTS.md and .conscience/CONSCIENCE.md as your directive.
 2. Run /git-mode dev (or `python .conscience/scripts/git_mode_manager.py dev`) to ensure git tracking is enabled for core system improvements.
 3. Manage all architectural tasks in .conscience/memory/KANBAN.md.
-4. Keep the 51 skills in sync between .conscience/skills/ and .agents/skills/ using `conscience sync`.
+4. Keep the 52 skills in sync between .conscience/skills/ and .agents/skills/ using `conscience sync`.
 5. Access the specialized subagent hive in .conscience/agents/ROSTER.md.
+6. Read .conscience/skills.toml; after adding a skill, regenerate it and record external provenance.
 Report current status and await evolution directives.
 ```
+
+---
+
+## 📦 External Dependency Ledger
+
+`.conscience/skills.toml` is the single source of truth for installed capabilities.
+
+- `[skills.*]` — generated registry: domain, trigger, summary, installed.
+- `[external.*]` — hand-maintained provenance: source URL, pinned ref, license, install paths, verification date.
+
+Rules:
+- Regenerate with `python .conscience/scripts/generate_manifest.py`. The external block is preserved.
+- Never invent a source or version — declare the gap instead (Law 18).
+- To update: diff upstream against the pinned `ref`, sync both vendored skill folders, then bump `ref` and `verified`.
 
 ---
 

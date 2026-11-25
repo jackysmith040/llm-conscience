@@ -9,7 +9,7 @@ description: >-
 
 [STATE: MOTOR_EXECUTION | INTENT: IMPLEMENTATION | PACE: STANDARD]
 
-**Pipeline position**: Step 4 (Parallel) of 6 — runs after `/to-tickets`, before `/code-review`.
+**Pipeline position**: Step 4 (Parallel) of 6 — runs after `/to-tickets`, before `/review`.
 
 ## What
 Executes an entire ticket graph from `.conscience/memory/KANBAN.md` using subagents. Navigates the dependency graph by advancing the unblocked **frontier**.
@@ -35,4 +35,4 @@ Executes an entire ticket graph from `.conscience/memory/KANBAN.md` using subage
 
 ---
 
-> 🏁 **All tickets green?** → Next: run `/code-review` (or `/rabit-auditor`) for a multi-pass security and architectural audit.
+> 🏁 **All tickets green?** → Next: run `/review` (or `/rabit-auditor`) for a multi-pass security and architectural audit.

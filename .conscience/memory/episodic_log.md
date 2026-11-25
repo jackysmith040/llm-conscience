@@ -37,3 +37,14 @@
   - Generated .conscience/skills.toml manifest indexing all 51 skills with domains, triggers, summaries, and install status.
   - Implemented Matt Pocock style Intent Grilling Decision Tree inside /route (asks targeted questions to deduce exact playbook rather than guessing).
   - Upgraded I/O constraint from Tri-Axis to Quad-Axis: [STATE: <LIFECYCLE> | DOMAIN: <DOMAIN> | INTENT: <TAXONOMY> | PACE: <VELOCITY>] for strict domain tracking.
+- `[EXTERNAL_DEPENDENCY_LEDGER_LOCKED]` - Closed the provenance gap in the skills registry:
+  - `.conscience/skills.toml` now separates generated `[skills.*]` registry from hand-maintained `[external.*]` provenance (source, pinned ref, license, install paths, verification date).
+  - Registered `icm-architect` at upstream ref `8bc2f5610d3843b3ffa31a142effe6b6337fef3c` (MIT); source verified via GitHub.
+  - `generate_manifest.py` preserves the external block and derives `last_updated` + `total_skills` instead of hardcoding them.
+  - All three boot blocks in both SETUP.md files now instruct the agent to consult the ledger and report stale external dependencies.
+- `[REDRIVE_VENDORED_AND_DOCS_SYNCED]` - Director-approved full sweep, committed and pushed to origin/main:
+  - Vendored `/rederive` (MIT) verbatim from EricJujianZou/rederive @ `f8f4629de73a04ba23f40fe4659b629364fa47e9` into `.conscience/skills/` and `.agents/skills/`; pinned under `[external.rederive]`.
+  - Regenerated `skills.toml`: 52 skills, 2 external entries, date 2026-11-25; both skill trees hash-identical (0 mismatches).
+  - Aligned README, GLOSSARY, roadmap, canonical CONSCIENCE, both SETUP files, and 4 pipeline skills to quad-axis / 20 Laws / 52 skills; replaced phantom `/implement` + `/code-review` with `/implement-spec` + `/review`.
+  - Converted two divergent legacy `rules/CONSCIENCE.md` copies into canonical-pointer stubs (native parsimony).
+  - Verified TOML parse and skill frontmatter; `quick_validate.py` could not run (PyYAML absent — no new dependency installed). Historical log entries left untouched.

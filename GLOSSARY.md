@@ -17,11 +17,11 @@
 **Conscience OS**
 : The full Neuro-Symbolic Digital Brain system. Encapsulated in `.conscience/`. Governs all agent behavior via the 20 Laws and the State Machine.
 
-**Tri-Axis State Header**
-: The mandatory response prefix: `[STATE: <LIFECYCLE> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`. Every agent response must begin with this.
+**Quad-Axis State Header**
+: The mandatory response prefix: `[STATE: <LIFECYCLE> | DOMAIN: <DOMAIN> | INTENT: <TAXONOMY> | PACE: <VELOCITY>]`. Every agent response must begin with this.
 
 **State Machine**
-: The 5-step cognitive lifecycle: `SENSORY_INGESTION → DELIBERATION → CONTEXT_HANDSHAKE → MOTOR_EXECUTION → MEMORY_CONSOLIDATION`.
+: The 6-stage cognitive lifecycle: `SENSORY_INGESTION → INTENT_MAPPING → CONTEXT_HANDSHAKE → DELIBERATION → MOTOR_EXECUTION → MEMORY_CONSOLIDATION`.
 
 **Autopoiesis**
 : The meta-cognitive super command (`/autopoiesis`). Triggers full-spectrum self-reflection, self-correction, self-healing, self-modification, and self-evolution.
@@ -59,7 +59,7 @@
 ## Pipeline Terms
 
 **Main Flow**
-: The declared idea→ship pipeline: `/grill → /to-spec → /to-tickets → /implement → /code-review → /retro`. The canonical sequence for taking an idea to shipped code.
+: The declared idea→ship pipeline: `/grill → /to-spec → /to-tickets → /implement-spec → /review → /retro`. The canonical sequence for taking an idea to shipped code.
 
 **Grill**
 : The pre-work alignment interview (`/same-wavelength` or `/grill`). Locks scope, architecture, non-goals, and DoD before any implementation.
@@ -111,6 +111,9 @@
 
 **Skill**
 : A SKILL.md file in `.conscience/skills/<name>/`. Encodes one reusable agent habit or workflow. Loaded on-demand via slash command.
+
+**Skill Registry / External Ledger**
+: `.conscience/skills.toml`. Generated `[skills.*]` entries describe installed capabilities; hand-maintained `[external.*]` entries record verified provenance (source, pinned ref, license, install paths, verification date).
 
 **Progressive Disclosure**
 : The skill design pattern where inline content covers what every branch needs, and rare/edge-case content is pushed behind a pointer to a references file. Keeps SKILL.md bodies ≤ 60 lines.

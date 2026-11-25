@@ -80,8 +80,8 @@ The **Main Flow** is the canonical idea→ship chain. Every feature, fix, or imp
 /grill (or /same-wavelength)
    └─▶ /to-spec           ← synthesize the conversation into a versioned spec
          └─▶ /to-tickets  ← split the spec into KANBAN tasks
-               └─▶ /implement (or /implement-spec for parallel)
-                     └─▶ /code-review (or /rabit-auditor for deep audit)
+               └─▶ /implement-spec  ← execute unblocked tickets in parallel
+                     └─▶ /review (or /rabit-auditor for deeper audit)
                            └─▶ /retro   ← improve the environment, close the loop
 ```
 
@@ -106,14 +106,14 @@ For efforts that span multiple sessions and have unresolved design questions:
 
 ---
 
-## 🗂️ Master Index (The 45 Specialized Skills)
+## 🗂️ Master Index (The 52 Specialized Skills)
 
 ### 🚀 Main Flow Pipeline Skills
 - `/same-wavelength` (Alias: `/grill`) — **Step 1**: Pre-implementation alignment grill. Locks scope, DoD, architecture before building.
 - `/to-spec` — **Step 2**: Conversation→spec synthesis. Publishes structured spec to `KANBAN.md`.
 - `/to-tickets` — **Step 3**: Splits a spec into atomic KANBAN tasks. *(Phase 2)*
-- `/implement` — **Step 4**: Build from spec or ticket. Test-first. *(Phase 2)*
-- `/code-review` (Alias: `/rabit-auditor`) — **Step 5**: Multi-pass audit against spec and standards.
+- `/implement-spec` — **Step 4**: Build from tickets with parallel worker agents. Test-first.
+- `/review` (or `/rabit-auditor`) — **Step 5**: Multi-pass audit against spec and standards.
 - `/retro` — **Step 6**: Post-session environment improvement. Closes the Main Flow cycle.
 
 ### 🗺️ Strategic Planning Skills
@@ -122,7 +122,6 @@ For efforts that span multiple sessions and have unresolved design questions:
 - `/architect` — Pre-build planning and decision surfacing.
 - `/wayfinder` — Big-effort decomposition into Decision Maps → KANBAN. *(Phase 2)*
 - `/prototype` — Throwaway-code design exploration. Delete after use. *(Phase 2)*
-- `/implement-spec` — Parallel multi-agent spec implementation. *(Phase 3)*
 - `/pipeline` — Applied Math + PM + Senior Eng architecture framework.
 
 ### 🌟 Core OS & Meta-Cognition

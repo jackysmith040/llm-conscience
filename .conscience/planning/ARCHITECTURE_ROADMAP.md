@@ -2,7 +2,7 @@
 
 > **Status**: Living Architectural Specification & Brainstorming Ledger  
 > **Location**: `.conscience/planning/ARCHITECTURE_ROADMAP.md`  
-> **Last Updated**: 2026-11-21  
+> **Last Updated**: 2026-11-25  
 > **Role**: Permanent memory anchor for Conscience OS 3.0 revamp  
 
 ---
@@ -13,7 +13,7 @@
                       ┌───────────────────────────────────────┐
                       │          AXON (The Kernel)            │
                       │  Bootloader, Guardian of the 20 Laws, │
-                      │  State Machine & Tri-Axis Lifecycle   │
+                      │  State Machine & Quad-Axis Lifecycle   │
                       └──────────────────┬────────────────────┘
                                          │
                  ┌───────────────────────┴───────────────────────┐
@@ -35,7 +35,7 @@
                       └───────────────────────────────────────┘
 ```
 
-- **Axon (The Kernel)**: The permanent, non-leavable caretaker and bootloader of the system. Enforces constraints, manages the Context Firewall, ensures memory persistence, and operates the Tri-Axis State Header.
+- **Axon (The Kernel)**: The permanent, non-leavable caretaker and bootloader of the system. Enforces constraints, manages the Context Firewall, ensures memory persistence, and operates the Quad-Axis State Header.
 - **Evie (Standalone Persona)**: Not a "right hemisphere" label, but an autonomous, fluid persona: Socratic inquiry, mathematical first-principles, empathetic reflection, and creative synthesis.
 - **OrchestratorAI (Standalone Persona)**: Not a "left hemisphere" label, but an autonomous operational persona: Chief of Staff, rigorous operator, delivery manager, and spec architect.
 - **Invocation & Switching**:

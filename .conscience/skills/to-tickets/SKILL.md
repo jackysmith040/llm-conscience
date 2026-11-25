@@ -9,7 +9,7 @@ description: >-
 
 [STATE: MOTOR_EXECUTION | INTENT: ARCHITECTURE | PACE: STANDARD]
 
-**Pipeline position**: Step 3 of 6 — runs after `/to-spec`, before `/implement`.
+**Pipeline position**: Step 3 of 6 — runs after `/to-spec`, before `/implement-spec`.
 
 ## What
 Decomposes an approved specification into **tracer-bullet vertical slices**, each declaring explicit blocking dependencies. Publishes the tickets directly to `.conscience/memory/KANBAN.md`.
@@ -30,4 +30,4 @@ Decomposes an approved specification into **tracer-bullet vertical slices**, eac
 
 ---
 
-> 🚀 **Tickets published?** → Next: pick the unblocked frontier ticket and run `/implement` (or `/implement-spec` for parallel execution).
+> 🚀 **Tickets published?** → Next: pick the unblocked frontier ticket and run `/implement-spec` (parallel execution) or implement it directly.

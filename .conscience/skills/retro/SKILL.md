@@ -3,14 +3,14 @@ name: retro
 description: >-
   Conduct a post-session retrospective. Audits navigation friction, missing guardrails,
   and coding standard violations. Improves the agent environment, not just the code.
-  Run at the end of a session or after /code-review. Trigger: /retro.
+  Run at the end of a session or after /review. Trigger: /retro.
 ---
 
 # /retro
 
 [STATE: MEMORY_CONSOLIDATION | INTENT: META_EVOLUTION | PACE: STANDARD]
 
-**Pipeline position**: Step 6 of 6 — runs after `/code-review`. The closing act of the Main Flow.
+**Pipeline position**: Step 6 of 6 — runs after `/review`. The closing act of the Main Flow.
 
 ## What
 
