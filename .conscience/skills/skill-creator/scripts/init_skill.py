@@ -9,7 +9,7 @@ Examples:
     init_skill.py my-new-skill
     init_skill.py my-api-helper
 
-Skills are created at /home/ubuntu/skills/<skill-name>/
+Skills are created at .conscience/skills/<skill-name>/
 """
 
 import sys
@@ -192,7 +192,7 @@ def title_case_skill_name(skill_name):
     return ' '.join(word.capitalize() for word in skill_name.split('-'))
 
 
-SKILLS_BASE_PATH = "/home/ubuntu/skills"
+SKILLS_BASE_PATH = str(Path(__file__).resolve().parents[2])
 
 
 def init_skill(skill_name):

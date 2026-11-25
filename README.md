@@ -73,7 +73,7 @@ All cognitive subsystems are cleanly encapsulated inside a single folder, keepin
 ```
 
 ### 5. Skill Registry & External Ledger
-`.conscience/skills.toml` is the single source of truth for installed capabilities. `[skills.*]` is generated from `.conscience/skills/`; `[external.*]` is hand-maintained provenance (source URL, pinned ref, license, install paths, verification date). Regenerate with `python .conscience/scripts/generate_manifest.py` — the external block is preserved. Never invent a source or version; declare the gap instead (Law 18).
+`.conscience/skills.toml` is the single source of truth for installed capabilities. `[skills.*]` is generated from `.conscience/skills/`; `[external.*]` is hand-maintained provenance (source URL, pinned ref, license, install paths, verification date). Regenerate with `python .conscience/scripts/generate_manifest.py` — the external block is preserved. Validator tooling deps live in `.conscience/requirements.txt` (`python -m pip install -r .conscience/requirements.txt`). Never invent a source or version; declare the gap instead (Law 18).
 
 ---
 

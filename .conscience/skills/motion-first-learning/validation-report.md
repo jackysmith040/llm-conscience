@@ -4,7 +4,7 @@
 
 The package passed the official skill validator:
 
-`python /home/ubuntu/skills/skill-creator/scripts/quick_validate.py motion-first-learning`
+`python .conscience/skills/skill-creator/scripts/quick_validate.py motion-first-learning`
 
 Result: **Skill is valid.**
 

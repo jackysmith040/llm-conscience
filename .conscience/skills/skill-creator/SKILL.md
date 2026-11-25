@@ -143,12 +143,12 @@ When creating a new skill from scratch, always run the `init_skill.py` script. T
 Usage:
 
 ```bash
-python /home/ubuntu/skills/skill-creator/scripts/init_skill.py <skill-name>
+python .conscience/skills/skill-creator/scripts/init_skill.py <skill-name>
 ```
 
 The script:
 
-- Creates the skill directory at `/home/ubuntu/skills/<skill-name>/`
+- Creates the skill directory at `.conscience/skills/<skill-name>/`
 - Generates a SKILL.md template with proper frontmatter and TODO placeholders
 - Creates example resource directories: `scripts/`, `references/`, and `templates/`
 - Adds example files in each directory that can be customized or deleted
@@ -163,9 +163,9 @@ When editing the (newly-generated or existing) skill, remember that the skill is
 
 Consult these helpful guides based on your skill's needs:
 
-- **Multi-step processes**: See `/home/ubuntu/skills/skill-creator/references/workflows.md` for sequential workflows and conditional logic
-- **Output formats or quality standards**: See `/home/ubuntu/skills/skill-creator/references/output-patterns.md` for template and example patterns
-- **Progressive Disclosure Patterns**: See `/home/ubuntu/skills/skill-creator/references/progressive-disclosure-patterns.md` for splitting content across files.
+- **Multi-step processes**: See `.conscience/skills/skill-creator/references/workflows.md` for sequential workflows and conditional logic
+- **Output formats or quality standards**: See `.conscience/skills/skill-creator/references/output-patterns.md` for template and example patterns
+- **Progressive Disclosure Patterns**: See `.conscience/skills/skill-creator/references/progressive-disclosure-patterns.md` for splitting content across files.
 
 These files contain established best practices for effective skill design.
 
@@ -202,7 +202,7 @@ Once development of the skill is complete, validate and deliver it to the user.
 Run the validation script to ensure the skill meets all requirements:
 
 ```bash
-python /home/ubuntu/skills/skill-creator/scripts/quick_validate.py <skill-name>
+python .conscience/skills/skill-creator/scripts/quick_validate.py <skill-name>
 ```
 
 If validation fails, fix the errors and run validation again.
@@ -212,12 +212,12 @@ If validation fails, fix the errors and run validation again.
 Use `message` tool to send the SKILL.md file as attachment:
 
 ```
-/home/ubuntu/skills/{skill-name}/SKILL.md
+.conscience/skills/{skill-name}/SKILL.md
 ```
 
 The system will automatically:
 
-1. Detect the path pattern `/home/ubuntu/skills/*/SKILL.md`
+1. Detect the path pattern `.conscience/skills/*/SKILL.md`
 2. Package the skill directory into a `.skill` file
 3. Send to frontend as a special card with options:
    - Add to My Skills

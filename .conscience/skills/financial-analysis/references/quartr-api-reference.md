@@ -93,29 +93,29 @@ All parameters go in the `query` dictionary unless specified as `path_params`. A
 
 ## 3. Execution Helper Scripts
 
-To avoid manual multi-step calls, prefer the bundled scripts. They handle the events-first workflow and parameter coercion automatically. Run them from the installed skill directory (`/home/ubuntu/skills/financial-analysis`).
+To avoid manual multi-step calls, prefer the bundled scripts. They handle the events-first workflow and parameter coercion automatically. Run them from the installed skill directory (`.conscience/skills/financial-analysis`).
 
 ### Script 1: Company Lookup
 ```bash
 # Local CSV search (fast, offline)
-python3 /home/ubuntu/skills/financial-analysis/scripts/lookup_company.py --name "Microsoft"
+python3 .conscience/skills/financial-analysis/scripts/lookup_company.py --name "Microsoft"
 
 # Upstream API search (matches tickers/CIKs/ISINs)
-python3 /home/ubuntu/skills/financial-analysis/scripts/lookup_company.py --ticker MSFT --api
+python3 .conscience/skills/financial-analysis/scripts/lookup_company.py --ticker MSFT --api
 ```
 
 ### Script 2: Document Fetcher
 ```bash
 # Latest earnings transcript
-python3 /home/ubuntu/skills/financial-analysis/scripts/fetch_quartr_document.py \
+python3 .conscience/skills/financial-analysis/scripts/fetch_quartr_document.py \
     --ticker FOUR --document transcript --latest --full --output transcript.json
 
 # 10-K report (Annual Report group ID 4)
-python3 /home/ubuntu/skills/financial-analysis/scripts/fetch_quartr_document.py \
+python3 .conscience/skills/financial-analysis/scripts/fetch_quartr_document.py \
     --ticker ORCL --document report --document-group-ids 4 --latest --output 10k.json
 
 # Earnings presentation slides
-python3 /home/ubuntu/skills/financial-analysis/scripts/fetch_quartr_document.py \
+python3 .conscience/skills/financial-analysis/scripts/fetch_quartr_document.py \
     --ticker MSFT --document slide --latest --output slides.json
 ```
 

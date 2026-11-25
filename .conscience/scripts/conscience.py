@@ -239,12 +239,12 @@ def cmd_init(args):
     # Initialize KANBAN if missing
     kanban = paths["memory"] / "KANBAN.md"
     if not kanban.is_file():
-        kanban.write_text("# Conscience OS Kanban Board\n\n## 🎯 To Do (Backlog)\n\n## 🚧 In Progress\n\n## ✅ Done\n- [x] Conscience OS initialized\n", encoding="utf-8")
+        kanban.write_text("# Conscience OS Kanban Board\n\nUse this single board to track execution state across complex tasks.\nAgents must update checkboxes (`- [ ]`, `- [/]`, `- [x]`) as they progress.\n\n## 🎯 To Do (Backlog)\n\n## 🚧 In Progress\n\n## ✅ Done\n", encoding="utf-8")
 
     # Initialize episodic log if missing
     log = paths["memory"] / "episodic_log.md"
     if not log.is_file():
-        log.write_text("# Episodic Memory Log\n\n## Operations Log\n\n- `[INITIALIZED]` - Conscience OS online.\n", encoding="utf-8")
+        log.write_text("# Episodic Memory Log\n\n*Chronological anchor point. The Agent appends completed processing sessions, major architectural pivots, and mathematical consolidations here to maintain a literal sense of time and action sequence across operations.*\n\n---\n\n## Operations Log\n<!-- Append New Logs Below This Line. Format: `[YYYY-MM-DD HH:MMZ] - [ACTION SUMMARY]` -->\n", encoding="utf-8")
 
     cmd_sync(args)
     print(f"[*] Conscience OS initialized successfully in [{mode.upper()}] mode!")

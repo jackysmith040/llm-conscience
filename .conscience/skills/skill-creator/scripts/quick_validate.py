@@ -8,9 +8,9 @@ Usage:
 
 Examples:
     quick_validate.py my-skill
-    quick_validate.py /home/ubuntu/skills/my-skill
+    quick_validate.py .conscience/skills/my-skill
 
-Skills are expected at /home/ubuntu/skills/<skill-name>/
+Skills are resolved relative to the skills/ folder containing this script.
 """
 
 import sys
@@ -18,7 +18,7 @@ import re
 import yaml
 from pathlib import Path
 
-SKILLS_BASE_PATH = Path("/home/ubuntu/skills")
+SKILLS_BASE_PATH = Path(__file__).resolve().parents[2]
 
 
 def resolve_skill_path(skill_path_or_name):
@@ -48,7 +48,7 @@ def validate_skill(skill_path_or_name):
         return False, "SKILL.md not found"
 
     # Read and validate frontmatter
-    content = skill_md.read_text()
+    content = skill_md.read_text(encoding="utf-8")
     if not content.startswith('---'):
         return False, "No YAML frontmatter found"
 
@@ -120,14 +120,14 @@ if __name__ == "__main__":
         print("       quick_validate.py <absolute-path-to-skill>")
         print("\nExamples:")
         print("  quick_validate.py my-skill")
-        print("  quick_validate.py /home/ubuntu/skills/my-skill")
+        print("  quick_validate.py .conscience/skills/my-skill")
         print(f"\nSkills are expected at {SKILLS_BASE_PATH}/<skill-name>/")
         sys.exit(1)
     
     skill_input = sys.argv[1]
     resolved_path = resolve_skill_path(skill_input)
     
-    print(f"🔍 Validating skill at: {resolved_path}")
+    print(f"Validating skill at: {resolved_path}")
     
     valid, message = validate_skill(skill_input)
     print(message)

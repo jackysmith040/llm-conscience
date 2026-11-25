@@ -5,6 +5,4 @@
 ---
 
 ## Operations Log
-<!-- Append New Logs Below This Line Format: `[UNIX TIMESTAMP / READABLE DATE] - [ACTION SUMMARY]` -->
-
-- `[INITIALIZED]` - The 2nd Brain was instantiated in this directory. Waiting for Hippocampus input.
+<!-- Append New Logs Below This Line. Format: `[YYYY-MM-DD HH:MMZ] - [ACTION SUMMARY]` -->

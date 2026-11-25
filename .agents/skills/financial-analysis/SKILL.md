@@ -168,8 +168,8 @@ These rules override default behavior. They exist because each addresses a previ
 
 Run from the installed skill directory. They automate the events-first workflow.
 ```bash
-python3 /home/ubuntu/skills/financial-analysis/scripts/lookup_company.py --name "Microsoft"
-python3 /home/ubuntu/skills/financial-analysis/scripts/fetch_quartr_document.py --ticker MSFT --document transcript --latest --full --output transcript.json
+python3 .conscience/skills/financial-analysis/scripts/lookup_company.py --name "Microsoft"
+python3 .conscience/skills/financial-analysis/scripts/fetch_quartr_document.py --ticker MSFT --document transcript --latest --full --output transcript.json
 ```
 
 ## API Reference
